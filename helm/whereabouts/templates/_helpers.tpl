@@ -51,6 +51,7 @@ helm.sh/chart: {{ include "whereabouts.chart" . }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+io.giantswarm.application.team: {{ index .Chart.Annotations "io.giantswarm.application.team" | quote }}
 {{- end }}
 
 {{/*

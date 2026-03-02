@@ -24,6 +24,7 @@ done
 # patches
 ./sync/patches/chart/patch.sh
 ./sync/patches/values/patch.sh
+./sync/patches/helpers/patch.sh
 
 # crds should always be last
 ./sync/patches/crds/patch.sh
