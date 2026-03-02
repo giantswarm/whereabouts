@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- changed: `app.giantswarm.io` label group was changed to `application.giantswarm.io`
+### Added
 
+- Add upstream chart at v0.9.3
+t 
 [Unreleased]: https://github.com/giantswarm/whereabouts/tree/main

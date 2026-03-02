@@ -1,0 +1,20 @@
+diff --git a/helm/whereabouts/values.yaml b/helm/whereabouts/values.yaml
+index 4c5ef538..c207c0c8 100644
+--- a/helm/whereabouts/values.yaml
++++ b/helm/whereabouts/values.yaml
+@@ -3,7 +3,7 @@
+ # Declare variables to be passed into your templates.
+
+ image:
+-  repository: ghcr.io/k8snetworkplumbingwg/whereabouts
++  repository: gsoci.azurecr.io/giantswarm/whereabouts
+   pullPolicy: IfNotPresent
+   # Overrides the image tag whose default is the chart appVersion.
+   tag: v0.8.0
+@@ -56,5 +56,5 @@ cniConf:
+   binDir: /opt/cni/bin
+
+ nodeSliceController:
+-  enabled: true
++  enabled: false
+   priorityClassName: ""
