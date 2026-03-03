@@ -2,7 +2,7 @@ diff --git a/helm/whereabouts/values.yaml b/helm/whereabouts/values.yaml
 index 4c5ef538..c207c0c8 100644
 --- a/helm/whereabouts/values.yaml
 +++ b/helm/whereabouts/values.yaml
-@@ -3,10 +3,10 @@
+@@ -3,16 +3,16 @@
  # Declare variables to be passed into your templates.
 
  image:
@@ -15,6 +15,13 @@ index 4c5ef538..c207c0c8 100644
 
  updateStrategy: RollingUpdate
  imagePullSecrets: []
+ nameOverride: ""
+ fullnameOverride: ""
+-namespaceOverride: "kube-system"
++namespaceOverride: ""
+ successfulJobsHistoryLimit: 0
+
+ serviceAccount:
 @@ -56,5 +56,5 @@ cniConf:
    binDir: /opt/cni/bin
 

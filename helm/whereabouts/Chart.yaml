@@ -2,7 +2,7 @@ apiVersion: v2
 # upstream version
 appVersion: 0.9.3
 # giantswarm app version
-version: 0.1.1
+version: 0.1.0
 name: whereabouts
 description: A CNI IPAM plugin that assigns IP addresses cluster-wide
 home: https://github.com/giantswarm/whereabouts
@@ -18,6 +18,6 @@ maintainers:
     email: team-rocket@giantswarm.io
 dependencies:
   - name: whereabouts-crds
-    version: 0.1.1
+    version: 0.9.3
 sources:
   - https://github.com/k8snetworkplumbingwg/whereabouts

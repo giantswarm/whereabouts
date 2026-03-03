@@ -57,7 +57,7 @@
       "type": "string"
     },
     "namespaceOverride": {
-      "default": "kube-system",
+      "default": "",
       "title": "namespaceOverride",
       "type": "string"
     },

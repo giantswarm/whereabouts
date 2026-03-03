@@ -12,7 +12,7 @@ updateStrategy: RollingUpdate
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-namespaceOverride: "kube-system"
+namespaceOverride: ""
 successfulJobsHistoryLimit: 0
 
 serviceAccount:
