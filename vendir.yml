@@ -1,0 +1,20 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+directories:
+  - path: vendor
+    contents:
+      - path: whereabouts
+        git:
+          depth: 1
+          url: https://github.com/k8snetworkplumbingwg/whereabouts
+          ref: "v0.9.3"
+        includePaths:
+          - deployment/whereabouts-chart/**/*
+  - path: helm/whereabouts
+    contents:
+    - path: .
+      directory:
+        path: vendor/whereabouts/deployment/whereabouts-chart
+      excludePaths:
+        - crds/**
+        - templates/NOTES.txt

@@ -1,0 +1,25 @@
+{{- if .Capabilities.APIVersions.Has "policy.giantswarm.io/v1alpha1/PolicyException" }}
+apiVersion: policy.giantswarm.io/v1alpha1
+kind: PolicyException
+metadata:
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+  name: whereabouts
+  namespace: policy-exceptions
+spec:
+  policies:
+  - disallow-capabilities-strict
+  - disallow-host-namespaces
+  - disallow-host-path
+  - disallow-privilege-escalation
+  - disallow-privileged-containers
+  - require-run-as-nonroot
+  - restrict-seccomp-strict
+  - restrict-volume-types
+  targets:
+  - kind: DaemonSet
+    names:
+    - {{ include "whereabouts.fullname" . }}*
+    namespaces:
+    - "{{ .Release.Namespace }}"
+{{- end }}

@@ -1,0 +1,15 @@
+apiVersion: vendir.k14s.io/v1alpha1
+directories:
+- contents:
+  - git:
+      commitTitle: 'Merge pull request #665 from k8snetworkplumbingwg/dependabot/docker/alpine-3.23.3...'
+      sha: c4bb29f7b8fe339b57cc756741dfbfb385eee91d
+      tags:
+      - v0.9.3
+    path: whereabouts
+  path: vendor
+- contents:
+  - directory: {}
+    path: .
+  path: helm/whereabouts
+kind: LockConfig
