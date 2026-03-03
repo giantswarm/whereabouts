@@ -56,11 +56,6 @@
       "title": "nameOverride",
       "type": "string"
     },
-    "namespaceOverride": {
-      "default": "",
-      "title": "namespaceOverride",
-      "type": "string"
-    },
     "nodeSelector": {
       "properties": {
         "kubernetes.io/os": {

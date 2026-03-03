@@ -12,7 +12,6 @@ updateStrategy: RollingUpdate
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
-namespaceOverride: ""
 successfulJobsHistoryLimit: 0
 
 serviceAccount:
