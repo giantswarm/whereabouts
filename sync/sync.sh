@@ -25,6 +25,7 @@ done
 ./sync/patches/chart/patch.sh
 ./sync/patches/values/patch.sh
 ./sync/patches/helpers/patch.sh
+./sync/patches/policy-exceptions/patch.sh
 ./sync/patches/kube-linter/patch.sh
 
 # crds should always be last
