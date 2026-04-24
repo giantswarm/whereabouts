@@ -1,6 +1,12 @@
 ---
 extends: default
 rules:
+  braces: disable
+  brackets: disable
   comments: disable
+  comments-indentation: disable
   document-start: disable
+  indentation: disable
   line-length: disable
+  trailing-spaces: disable
+
