@@ -17,9 +17,9 @@ spec:
   - restrict-seccomp-strict
   - restrict-volume-types
   targets:
-  - kind: DaemonSet
-    names:
-    - {{ include "whereabouts.fullname" . }}*
-    namespaces:
-    - "{{ .Release.Namespace }}"
+    - kind: DaemonSet
+      names:
+        - {{ include "whereabouts.fullname" . }}*
+      namespaces:
+        - "{{ .Release.Namespace }}"
 {{- end }}
