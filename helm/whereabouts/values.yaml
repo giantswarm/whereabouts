@@ -6,7 +6,7 @@ image:
   repository: gsoci.azurecr.io/giantswarm/whereabouts
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: v0.9.3
+  tag: v0.9.4
 
 updateStrategy: RollingUpdate
 imagePullSecrets: []
