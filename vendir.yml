@@ -7,7 +7,7 @@ directories:
         git:
           depth: 1
           url: https://github.com/k8snetworkplumbingwg/whereabouts
-          ref: "v0.9.3"
+          ref: "v0.9.4"
         includePaths:
           - deployment/whereabouts-chart/**/*
   - path: helm/whereabouts
