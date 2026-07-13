@@ -1,7 +1,0 @@
-checks:
-  exclude:
-    - "host-network"
-    - "no-read-only-root-fs"
-    - "privilege-escalation-container"
-    - "privileged-container"
-    - "run-as-non-root"
