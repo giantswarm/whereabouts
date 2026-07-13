@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Improve Renovate config.
+- chore: update vendir https://github.com/k8snetworkplumbingwg/whereabouts to v0.9.4
 
 ## [0.1.0] - 2026-03-03
 
