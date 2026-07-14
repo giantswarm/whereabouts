@@ -2,10 +2,10 @@ apiVersion: vendir.k14s.io/v1alpha1
 directories:
 - contents:
   - git:
-      commitTitle: 'Merge pull request #665 from k8snetworkplumbingwg/dependabot/docker/alpine-3.23.3...'
-      sha: c4bb29f7b8fe339b57cc756741dfbfb385eee91d
+      commitTitle: 'Merge pull request #701 from k8snetworkplumbingwg/dependabot/github_actions/github/codeql-action-4.35.5...'
+      sha: 3a262bd0cd873e13d9b379342f8251b852a89b8f
       tags:
-      - v0.9.3
+      - v0.9.4
     path: whereabouts
   path: vendor
 - contents:
