@@ -19,6 +19,12 @@ CURRENT_CHART_VERSION=$(curl -s https://api.github.com/repos/giantswarm/whereabo
 # remove leading 'v' if present
 CURRENT_CHART_VERSION="${CURRENT_CHART_VERSION#v}"
 
+# curl exits 0 on an http error, so a rate limit gives us an empty or null version
+if [[ -z "${CURRENT_CHART_VERSION}" || "${CURRENT_CHART_VERSION}" == "null" ]]; then
+    echo "unable to determine the current chart version; aborting."
+    exit 1
+fi
+
 # we need to set the appVersion field in Chart.yaml to match the
 # version being synced from upstream.
 
