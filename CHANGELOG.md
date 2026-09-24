@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update architect to v10.11.0 (giantswarm/whereabouts#41)
+
 ### Added
 
 - Run the sync script automatically on Renovate vendir branches and push the result for review.
