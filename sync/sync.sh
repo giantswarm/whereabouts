@@ -30,6 +30,7 @@ done
 
 # crds should always be last
 ./sync/patches/crds/patch.sh
+./sync/patches/chart-label/patch.sh
 
 if ! git diff --quiet --exit-code helm/ ; then
     echo -e "\n---------- PRINTING GIT DIFF ----------\n"
