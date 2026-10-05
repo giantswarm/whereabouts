@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update architect to v10.11.0 (giantswarm/whereabouts#41)
 - Update architect to v10.11.1 (giantswarm/whereabouts#42)
+- Update architect to v10.12.0 (giantswarm/whereabouts#45)
 
 ### Added
 
