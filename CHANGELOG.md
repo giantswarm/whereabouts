@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.12.0 (giantswarm/whereabouts#45)
 - Update architect to v10.12.1 (giantswarm/whereabouts#46)
 - Update architect to v10.12.2 (giantswarm/whereabouts#48)
+- Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
 
 ### Added
 
