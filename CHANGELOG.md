@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
+- Set the CRD subchart version from the upstream version in `vendir.yml` when the CRDs change.
+- Stop overriding appVersion in chart metadata.
 
 ### Changed
 
@@ -23,10 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Run the sync script automatically on Renovate vendir branches and push the result for review.
 - Add a check which fails a pull request if the sync script was not run.
-
-### Fixed
-
-- Set the CRD subchart version from the upstream version in `vendir.yml` when the CRDs change.
 
 ## [0.2.0] - 2026-07-14
 
