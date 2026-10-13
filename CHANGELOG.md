@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
+- Set the CRD subchart version from the upstream version in `vendir.yml` when the CRDs change.
+- Stop overriding appVersion in chart metadata.
 
 ### Changed
 
@@ -19,15 +21,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.12.1 (giantswarm/whereabouts#46)
 - Update architect to v10.12.2 (giantswarm/whereabouts#48)
 - Add Github action to create an issue in `giantswarm/giantswarm` for Team Rocket on vendir updates.
+- Update architect to v10.13.0 (giantswarm/whereabouts#53)
+- Update architect to v10.13.2 (giantswarm/whereabouts#54)
 
 ### Added
 
 - Run the sync script automatically on Renovate vendir branches and push the result for review.
 - Add a check which fails a pull request if the sync script was not run.
-
-### Fixed
-
-- Set the CRD subchart version from the upstream version in `vendir.yml` when the CRDs change.
 
 ## [0.2.0] - 2026-07-14
 
