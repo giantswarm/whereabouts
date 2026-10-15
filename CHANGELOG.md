@@ -7,13 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update upstream whereabouts chart to v0.9.4.
+
 ### Fixed
 
 - The `helm.sh/chart` label is valid for long chart versions: the 63-character cut trims the whole trailing run of `-`, `.` and `_`.
 - Set the CRD subchart version from the upstream version in `vendir.yml` when the CRDs change.
 - Stop overriding appVersion in chart metadata.
-
-### Changed
 
 - Use the `giantswarm-release` GitHub App instead of the taylorbot personal access token to push sync commits.
 - Update architect to v10.11.0 (giantswarm/whereabouts#41)
