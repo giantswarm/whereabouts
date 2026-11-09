@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update architect to v10.16.6 (giantswarm/whereabouts#76)
 - Update architect to v10.16.7 (giantswarm/whereabouts#77)
 - Update architect to v10.17.4 (giantswarm/whereabouts#81)
+- Update mikefarah/yq to v4.54.3 (giantswarm/whereabouts#82)
 
 ### Fixed
 
