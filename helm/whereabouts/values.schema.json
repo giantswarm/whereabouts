@@ -1,200 +1,172 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "properties": {
-    "affinity": {
-      "title": "affinity",
-      "type": "object"
-    },
-    "cniConf": {
-      "properties": {
-        "binDir": {
-          "default": "/opt/cni/bin",
-          "title": "binDir",
-          "type": "string"
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+        "affinity": {
+            "type": "object"
         },
-        "confDir": {
-          "default": "/etc/cni/net.d",
-          "title": "confDir",
-          "type": "string"
-        }
-      },
-      "title": "cniConf",
-      "type": "object"
-    },
-    "fullnameOverride": {
-      "default": "",
-      "title": "fullnameOverride",
-      "type": "string"
-    },
-    "image": {
-      "properties": {
-        "pullPolicy": {
-          "default": "IfNotPresent",
-          "title": "pullPolicy",
-          "type": "string"
+        "cniConf": {
+            "type": "object",
+            "properties": {
+                "binDir": {
+                    "type": "string"
+                },
+                "confDir": {
+                    "type": "string"
+                }
+            }
         },
-        "repository": {
-          "default": "gsoci.azurecr.io/giantswarm/whereabouts",
-          "title": "repository",
-          "type": "string"
+        "fullnameOverride": {
+            "type": "string"
         },
-        "tag": {
-          "description": "Overrides the image tag whose default is the chart appVersion.",
-          "title": "tag",
-          "type": "string"
-        }
-      },
-      "title": "image",
-      "type": "object"
-    },
-    "imagePullSecrets": {
-      "title": "imagePullSecrets",
-      "type": "array"
-    },
-    "nameOverride": {
-      "default": "",
-      "title": "nameOverride",
-      "type": "string"
-    },
-    "nodeSelector": {
-      "properties": {
-        "kubernetes.io/os": {
-          "default": "linux",
-          "title": "kubernetes.io/os",
-          "type": "string"
-        }
-      },
-      "title": "nodeSelector",
-      "type": "object"
-    },
-    "nodeSliceController": {
-      "properties": {
-        "enabled": {
-          "default": false,
-          "title": "enabled",
-          "type": "boolean"
+        "image": {
+            "type": "object",
+            "properties": {
+                "pullPolicy": {
+                    "type": "string"
+                },
+                "repository": {
+                    "type": "string"
+                },
+                "tag": {
+                    "type": "string"
+                }
+            }
+        },
+        "imagePullSecrets": {
+            "type": "array"
+        },
+        "nameOverride": {
+            "type": "string"
+        },
+        "nodeSelector": {
+            "type": "object",
+            "properties": {
+                "kubernetes.io/os": {
+                    "type": "string"
+                }
+            }
+        },
+        "nodeSliceController": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "priorityClassName": {
+                    "type": "string"
+                }
+            }
+        },
+        "podAnnotations": {
+            "type": "object"
+        },
+        "podSecurityContext": {
+            "type": "object"
         },
         "priorityClassName": {
-          "default": "",
-          "title": "priorityClassName",
-          "type": "string"
-        }
-      },
-      "title": "nodeSliceController",
-      "type": "object"
-    },
-    "podAnnotations": {
-      "title": "podAnnotations",
-      "type": "object"
-    },
-    "podSecurityContext": {
-      "title": "podSecurityContext",
-      "type": "object"
-    },
-    "priorityClassName": {
-      "default": "",
-      "title": "priorityClassName",
-      "type": "string"
-    },
-    "resources": {
-      "properties": {
-        "limits": {
-          "properties": {
-            "cpu": {
-              "default": "100m",
-              "title": "cpu",
-              "type": "string"
-            },
-            "memory": {
-              "default": "50Mi",
-              "title": "memory",
-              "type": "string"
-            }
-          },
-          "title": "limits",
-          "type": "object"
+            "type": "string"
         },
-        "requests": {
-          "properties": {
-            "cpu": {
-              "default": "100m",
-              "title": "cpu",
-              "type": "string"
-            },
-            "memory": {
-              "default": "50Mi",
-              "title": "memory",
-              "type": "string"
-            }
-          },
-          "title": "requests",
-          "type": "object"
-        }
-      },
-      "title": "resources",
-      "type": "object"
-    },
-    "securityContext": {
-      "properties": {
-        "privileged": {
-          "default": true,
-          "title": "privileged",
-          "type": "boolean"
-        }
-      },
-      "title": "securityContext",
-      "type": "object"
-    },
-    "serviceAccount": {
-      "properties": {
-        "annotations": {
-          "description": "Annotations to add to the service account",
-          "title": "annotations",
-          "type": "object"
-        },
-        "create": {
-          "default": true,
-          "description": "Specifies whether a service account should be created",
-          "title": "create",
-          "type": "boolean"
-        }
-      },
-      "title": "serviceAccount",
-      "type": "object"
-    },
-    "successfulJobsHistoryLimit": {
-      "default": 0,
-      "title": "successfulJobsHistoryLimit",
-      "type": "integer"
-    },
-    "tolerations": {
-      "items": {
-        "anyOf": [
-          {
+        "reconciler": {
+            "type": "object",
             "properties": {
-              "effect": {
-                "default": "NoSchedule",
-                "title": "effect",
-                "type": "string"
-              },
-              "operator": {
-                "default": "Exists",
-                "title": "operator",
-                "type": "string"
-              }
-            },
-            "type": "object"
-          }
-        ]
-      },
-      "title": "tolerations",
-      "type": "array"
-    },
-    "updateStrategy": {
-      "default": "RollingUpdate",
-      "title": "updateStrategy",
-      "type": "string"
+                "logLevel": {
+                    "type": "string"
+                },
+                "resources": {
+                    "type": "object",
+                    "properties": {
+                        "limits": {
+                            "type": "object",
+                            "properties": {
+                                "cpu": {
+                                    "type": "string"
+                                },
+                                "memory": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "requests": {
+                            "type": "object",
+                            "properties": {
+                                "cpu": {
+                                    "type": "string"
+                                },
+                                "memory": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "resources": {
+            "type": "object",
+            "properties": {
+                "limits": {
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "memory": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "requests": {
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "type": "string"
+                        },
+                        "memory": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "securityContext": {
+            "type": "object",
+            "properties": {
+                "privileged": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "serviceAccount": {
+            "type": "object",
+            "properties": {
+                "annotations": {
+                    "type": "object"
+                },
+                "create": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "successfulJobsHistoryLimit": {
+            "type": "integer"
+        },
+        "tolerations": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "effect": {
+                        "type": "string"
+                    },
+                    "operator": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "updateStrategy": {
+            "type": "string"
+        }
     }
-  },
-  "type": "object"
 }

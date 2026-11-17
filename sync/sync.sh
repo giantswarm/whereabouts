@@ -4,22 +4,23 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) ; readonly dir
-cd "${dir}/.."
-
-set -x
-# Sync using vendir
-vendir sync
-{ set +x; } 2>/dev/null
+SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) ; readonly SCRIPT_DIR
+cd "${SCRIPT_DIR}/.."
+source "${SCRIPT_DIR}"/_helpers.sh
 
 # test if requirements are installed
-PROGRAMS=("yq")
+PROGRAMS=("yq" "jq" "vendir")
 for program in "${PROGRAMS[@]}"; do
     if ! command -v "${program}" &> /dev/null; then
         echo "${program} not installed; aborting."
         exit 1
     fi
 done
+
+set -x
+# Sync using vendir
+vendir sync
+{ set +x; } 2>/dev/null
 
 # patches
 ./sync/patches/chart/patch.sh
