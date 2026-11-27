@@ -7,8 +7,6 @@ set -o pipefail
 SCRIPT_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd ) ; readonly SCRIPT_DIR
 source "${SCRIPT_DIR}"/../../_helpers.sh
 
-cd "${REPO_DIR}"
-
 # prepare the CRD dependency chart
 cp -r "${SCRIPT_DIR}"/manifests/* "${CHART_DIR}"
 mkdir "${CRD_CHART_DIR}"/templates -p || true
@@ -39,7 +37,7 @@ if ! git diff --quiet "${BASE_REF}" -- "${CRD_CHART_DIR}"/templates/; then
     CRDS_CHANGED=1
 fi
 
-if [[ $CRDS_CHANGED -eq 1 ]]; then
+if [[ "$CRDS_CHANGED" -eq 1 ]]; then
     # CRDs have changed in this release, set the CRD chart version to match the upstream version we're syncing against
     CRD_CHART_VERSION=$(yq -r .directories[0].contents[0].git.ref "${REPO_DIR}"/vendir.yml)
     # remove leading 'v' if present
@@ -59,4 +57,4 @@ fi
 sed -i -E "s/^(version: ).*/\1${CRD_CHART_VERSION}/" "${CRD_CHART_DIR}/Chart.yaml"
 
 # replace the placeholder in the main chart's dependencies
-sed -i -E "s/CRD_VERSION_PLACEHOLDER/${CRD_CHART_VERSION}/" "${CHART_DIR}/Chart.yaml"
+sed -i -E "s/CRD_VERSION_PLACEHOLDER/${CRD_CHART_VERSION}/" "${CHART_YAML}"

@@ -9,8 +9,6 @@ source "${SCRIPT_DIR}"/../../_helpers.sh
 
 echo "Updating Chart.yaml"
 
-cd "${SCRIPT_DIR}"
-
 # we need to get the current version of the chart in order to
 # reset it after copying Chart.yaml over.
 
@@ -29,16 +27,16 @@ fi
 # version being synced from upstream.
 
 # get the upstream sync version from vendir.yml
-UPSTREAM_SYNC_VERSION=$(yq -r .directories[0].contents[0].git.ref ${REPO_DIR}/vendir.yml)
+UPSTREAM_SYNC_VERSION=$(yq -r .directories[0].contents[0].git.ref "${REPO_DIR}"/vendir.yml)
 # strip leading 'v' if present
 UPSTREAM_SYNC_VERSION_STRIPPED="${UPSTREAM_SYNC_VERSION#v}"
 
 set -x
-cp manifests/Chart.yaml "${CHART_DIR}"/Chart.yaml
+cp "${SCRIPT_DIR}"/manifests/Chart.yaml "${CHART_YAML}"
 { set +x; } 2>/dev/null
 
 # set the app version in Chart.yaml
-sed -i -E "s/APP_VERSION_PLACEHOLDER/${UPSTREAM_SYNC_VERSION_STRIPPED}/g" "${CHART_DIR}/Chart.yaml"
+sed -i -E "s/APP_VERSION_PLACEHOLDER/${UPSTREAM_SYNC_VERSION_STRIPPED}/g" "${CHART_YAML}"
 
 # reset the version in Chart.yaml
-sed -i -E "s/CHART_VERSION_PLACEHOLDER/${CURRENT_CHART_VERSION}/g" "${CHART_DIR}/Chart.yaml"
+sed -i -E "s/CHART_VERSION_PLACEHOLDER/${CURRENT_CHART_VERSION}/g" "${CHART_YAML}"
